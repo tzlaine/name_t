@@ -11,7 +11,6 @@
 #include <adobe/config.hpp>
 
 #include <functional>
-#include <typeinfo>
 
 /**************************************************************************************************/
 
@@ -261,16 +260,6 @@ struct dec : public std::unary_function<T, T> {
 };
 
 /**************************************************************************************************/
-
-/// \brief typeid(x) wrapped in a function object
-struct typeid_ {
-    typedef std::type_info result_type;
-
-    template <typename T>
-    const result_type& operator()(T) const {
-        return typeid(T);
-    }
-};
 
 //!@}
 

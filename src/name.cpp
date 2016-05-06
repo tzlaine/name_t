@@ -53,7 +53,7 @@ const char* name_t::map_string(const char* str) {
 
     // Once fnv1a is in master we can make the hash faster
     // with a call to the sentinel variant.
-    std::size_t hash(detail::name_hash(str, std::strlen(str)));
+    std::size_t hash(detail::name_hash(str, strlen(str)));
 
     return map_string(str, hash);
 }

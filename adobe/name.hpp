@@ -14,6 +14,7 @@
 // stdc++
 #include <functional>
 #include <iosfwd>
+#include <cstring>
 
 // boost
 #include <boost/operators.hpp>
@@ -247,13 +248,13 @@ struct name_t : boost::totally_ordered<name_t, name_t> {
             O(N)
     */
     friend bool operator<(const name_t& x, const name_t& y) {
-        return std::strcmp(x.ptr_m, y.ptr_m) < 0;
+        return strcmp(x.ptr_m, y.ptr_m) < 0;
     }
 
     const char* c_str() const { return ptr_m; }
 
     const char* begin() const { return ptr_m; }
-    const char* end() const { return begin() + std::strlen(begin()); }
+    const char* end() const { return begin() + strlen(begin()); }
 
     /**
         for use with sorting, e.g.:
